@@ -4,7 +4,7 @@ Theme URI: http://haulo.fi
 Author: Mika Haulo 
 Author URI: http://haulo.fi
 Description: Theme for kaupinkanuunat.net
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: restaurant-and-cafe
@@ -978,11 +978,11 @@ object {
 
 /*header style*/
 .site-header{
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.30);
+	background: rgba(0, 0, 0, 1);
 	z-index: 3;
 	padding: 25px 0 0;
 
@@ -1019,7 +1019,7 @@ object {
 }
 
 .banner:before{
-	background: rgba(0, 0, 0, 0.20);
+	background: transparent;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -3012,7 +3012,7 @@ object {
 
 	.main-navigation{display: none;}
 
-	.site-header{padding: 20px 0 10px;}
+	.site-header{padding: 15px 0 15px;}
 
 	.banner .banner-text .title{
 		font-size: 30px;
@@ -3057,7 +3057,6 @@ object {
 		top: 0;
 		background-color: #3c3c3c;
 		background: transparent;
-		margin-top: -170px;
 	}
 
 	.home .banner .banner-text{padding: 0px 0 10px;}
@@ -3113,7 +3112,7 @@ object {
 
 .banner-text h1   {
 	font-family: "Cardo";
-	font-size: 2em;
+	font-size: 1.3em;
 	text-transform: uppercase;
 	line-height: 1.2em;
 }
@@ -3235,7 +3234,6 @@ object {
 	}
 
 	.home .banner .banner-text {
-		top: 120px;
 	}
 
 	.grid-item {
@@ -3244,6 +3242,22 @@ object {
 
 	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
 		width: 50%;
+	}
+
+	.site-header {
+		position: absolute;
+	}
+
+	.banner-text h1   {
+		font-size: 2em;
+	}
+
+	.banner:before{
+		background: rgba(0, 0, 0, 0.20);
+	}
+
+	.site-content {
+		padding: 140px 0;
 	}
 
 }
@@ -3269,6 +3283,30 @@ object {
 
 @media only screen and (min-width: 1200px) {
 	.home .banner-text {
-		top: 290px !important;
+		top: 120px !important;
 	}
+
+	.banner-text h1   {
+		font-size: 3em;
+	}
+}
+
+@media only screen and (max-width: 1199px) {
+	.banner img {
+		display:none;
+	}
+
+	.banner .wp-post-image {
+		display:block;
+	}
+}
+
+.banner a.btn-black {
+	color: #d88414;
+}
+
+img.custom-logo {
+	max-width: 30px;
+	float: left;
+	margin-right: 10px;
 }

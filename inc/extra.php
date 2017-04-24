@@ -420,7 +420,7 @@ function restaurant_and_cafe_banner_cb(){
 	 	                $categories_list = get_the_category_list( esc_html__( ', ', 'restaurant-and-cafe' ) );
 
 				if( has_post_thumbnail() ) {
-		                        the_post_thumbnail( 'restaurant-and-cafe-banner' );
+					the_post_thumbnail( 'restaurant-and-cafe-banner' );
 ?>
  			                <div class="banner-text">
                     				<div class="container">
@@ -429,9 +429,6 @@ function restaurant_and_cafe_banner_cb(){
                     					</div>
                     				</div>
                     			</div>
-                  			<div class="btn-scroll-down desktop-only">
-						<span><?php esc_html_e('scroll Down','restaurant-and-cafe'); ?></span>
-					</div>
 					<div id="next_section"></div>
 <?php
                     		}

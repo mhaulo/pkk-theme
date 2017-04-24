@@ -28,12 +28,19 @@
 		<div class = "container">
 		<div class="site-branding">
 		<?php 
-			 if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-               	the_custom_logo();
-             } 
 
         ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1 class="site-title">
+				<?php
+					if( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+						the_custom_logo();
+					}
+				?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+            </h1>
+
 			<?php
 
 			$description = get_bloginfo( 'description', 'display' );
