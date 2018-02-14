@@ -402,9 +402,7 @@ function restaurant_and_cafe_banner_cb(){
 ?>
 	<div class="banner">
 <?php
-        if( $restaurant_and_cafe_ed_banner_section && is_page_template( 'template-home.php' ) ) {
-
-
+	if( $restaurant_and_cafe_ed_banner_section && is_page_template( 'template-home.php' ) ) {
 		$banner_qry = new WP_Query( array(
 			'post_type'             => 'page',
 			'post__in'              => array( $restaurant_and_cafe_banner_post ),
@@ -412,30 +410,34 @@ function restaurant_and_cafe_banner_cb(){
 			'posts_per_page'        => -1,
 			'ignore_sticky_posts'   => true ) );
 
-
-
 		if( $banner_qry->have_posts() ) {
-                	while( $banner_qry->have_posts() ) {
+			while( $banner_qry->have_posts() ) {
 				$banner_qry->the_post();
-	 	                $categories_list = get_the_category_list( esc_html__( ', ', 'restaurant-and-cafe' ) );
+				$categories_list = get_the_category_list( esc_html__( ', ', 'restaurant-and-cafe' ) );
 
 				if( has_post_thumbnail() ) {
-					the_post_thumbnail( 'restaurant-and-cafe-banner' );
 ?>
- 			                <div class="banner-text">
-                    				<div class="container">
-                    					<div class="text">
-                      						<?php the_content(); ?>
-                    					</div>
-                    				</div>
-                    			</div>
-					<div id="next_section"></div>
+					<div class="fp-hero" style="background-image: url(<?php echo get_the_post_thumbnail_url( ); ?>);">
 <?php
-                    		}
-                	}
-                	wp_reset_postdata();
-            	}
-        }
+						/*the_post_thumbnail( 'restaurant-and-cafe-banner' );*/
+?>
+					</div>
+						<div class="banner-text">
+							<div class="container">
+								<div class="text">
+									<?php the_content(); ?>
+								</div>
+							</div>
+						</div>
+						<div id="next_section">
+						</div>
+<?php
+				}
+			}
+			
+			wp_reset_postdata();
+		}
+	}
 ?>
 	</div>
 <?php

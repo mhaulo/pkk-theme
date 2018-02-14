@@ -4,7 +4,7 @@ Theme URI: http://haulo.fi
 Author: Mika Haulo 
 Author URI: http://haulo.fi
 Description: Theme for kaupinkanuunat.net
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: restaurant-and-cafe
@@ -986,6 +986,12 @@ object {
 	z-index: 3;
 	padding: 25px 0 0;
 
+}
+
+.fp-hero {
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .site-header .site-branding{float: left;}
@@ -3112,7 +3118,6 @@ object {
 
 .banner-text h1   {
 	font-family: "Cardo";
-	font-size: 1.3em;
 	text-transform: uppercase;
 	line-height: 1.2em;
 }
@@ -3259,6 +3264,12 @@ object {
 	.site-content {
 		padding: 140px 0;
 	}
+	
+	.fp-hero {
+		height: 1000px;
+	}
+
+
 
 }
 
@@ -3278,6 +3289,11 @@ object {
 	home .banner-text {
 		top: 120px;
 	}
+	
+	.fp-hero {
+		height: 1100px;
+	}
+
 
 }
 
@@ -3293,7 +3309,7 @@ object {
 
 @media only screen and (max-width: 1199px) {
 	.banner img {
-		display:none;
+		/*display:none;*/
 	}
 
 	.banner .wp-post-image {
